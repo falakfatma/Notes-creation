@@ -20,32 +20,16 @@
         <div class="notes flex flex-wrap justify-center">
             <%if (files.length > 0){ %>
             <% files.forEach(file => { %>
-                <div  class="note bg-red-100 m-3 p-3 rounded-lg shadow-lg ">
+                <div class="note bg-red-100 m-3 p-3 rounded-lg shadow-lg ">
                     <h1 class="text-2xl font-bold text-center">
-                        <%= file.split('.')[0] %>
+                        <%= file %>
                     </h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <a href="/file/<%= file %>">Read more</a>
                 </div>
             <% }) %>
             <% }else{ %>
             <h1 class="text-2xl font-bold text-center">No Notes Found</h1>
             <% } %>
-
-            <div class="note bg-red-100 m-3 hidden p-3 rounded-lg shadow-lg ">
-                <h1 class="text-2xl font-bold text-center">Title</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-        
-            <div class="note bg-red-100 m-3 hidden p-3 rounded-lg shadow-lg ">
-                <h1 class="text-2xl font-bold text-center">Title</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-        
-            <div class="note bg-red-100 m-3 hidden p-3 rounded-lg shadow-lg ">
-                <h1 class="text-2xl font-bold text-center">Title</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-
         </div>
     </div> 
     <script src="/javascrips/script.js"></script>

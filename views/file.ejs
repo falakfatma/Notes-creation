@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+<body>
+    <div class="mx-auto bg-zinc-600 w-full h-screen  px-4 text-zinc-300">
+        <h1 class="text-2xl font-bold text-center pt-4"> 
+            <%= pathname %>
+        </h1>    
+        <p class="text-center">
+            <%= data %>
+        </p>
+        <div class="flex justify-between mt-4 w-1/4 items-center text-center ">
+
+          <a href="/del" class="note bg-red-400 m-3 p-3 rounded-lg shadow-lg text-zinc-200 ">
+              Delete
+          </a>
+          <a href="/edit/<%= pathname %>" class="note bg-yellow-400 m-3 p-3 rounded-lg shadow-lg text-zinc-200 ">
+            Edit
+        </a>
+        </div>
+      
+    </div>
+</body>
+</html>

@@ -18,6 +18,28 @@ app.get("/",(req,res)=>{
     console.log("files",files)
     })
 })
+app.get("/file/:filename",(req,res)=>{
+    fs.readFile(`./notes/${req.params.filename}`,'utf-8',(err,data)=>{
+        if(err){
+            console.log(err)
+        }else{
+            res.render("file",{data:data, pathname:req.params.filename})
+        }
+    })
+})
+app.get("/edit/:pathname",(req,res)=>{
+    res.render("create",{pathname:req.params.pathname})
+})
+
+app.post("/edit",(req,res)=>{ 
+    fs.rename(`./notes/${req.body.previous}`, `./notes/${req.body.new}`,(err)=>{
+        if(err){
+            console.log(err)
+        }
+        res.redirect('/')
+    })
+})
+
 app.post("/create",(req,res)=>{ 
     fs.writeFile(`./notes/${req.body.name.split(' ').join('')}.txt`, req.body.details,(err)=>{
         if(err){
@@ -25,6 +47,5 @@ app.post("/create",(req,res)=>{
         }
         res.redirect('/')
     })
-    console.log(req.body)
 })
 app.listen(3000)
