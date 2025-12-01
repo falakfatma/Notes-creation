@@ -1,0 +1,24 @@
+{
+  "name": "notes-creation",
+  "version": "1.0.0",
+  "description": "My first backend project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/falakfatma/Notes-creation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/falakfatma/Notes-creation/issues"
+  },
+  "homepage": "https://github.com/falakfatma/Notes-creation#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  }
+}

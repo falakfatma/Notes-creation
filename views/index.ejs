@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <div class="container mx-auto bg-blue-100 w-full h-full text-center px-4">
+        <ul class=" list-inside px-4 py-12 bg-red-100 font-bold text-3xl">
+            <li class=""> NOTEAPP </li>
+        </ul>
+        <form action="/create" method="post"  >
+            <input  type="text" name="name" placeholder="Enter Title" class="p-3 rounded-lg bg-white block my-4 w-full">
+            <textarea id="w3review" name="details" rows="4"  class="p-3 rounded-lg bg-white block my-4 w-full resize-none" placeholder="Enter Note"></textarea>
+            <input type="submit" class="py-4 px-12 border bg-purple-100 text-center font-bold rounded">
+        </form>
+        <div class="notes flex flex-wrap justify-center">
+            <%if (files.length > 0){ %>
+            <% files.forEach(file => { %>
+                <div class="note bg-red-100 m-3 p-3 rounded-lg shadow-lg ">
+                    <h1 class="text-2xl font-bold text-center">
+                        <%= file %>
+                    </h1>
+                    <a href="/file/<%= file %>">Read more</a>
+                </div>
+            <% }) %>
+            <% }else{ %>
+            <h1 class="text-2xl font-bold text-center">No Notes Found</h1>
+            <% } %>
+        </div>
+    </div> 
+    <script src="/javascrips/script.js"></script>
+
+</body>
+</html>
